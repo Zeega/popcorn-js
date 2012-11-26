@@ -54,7 +54,7 @@ Popcorn.player( "flashvideo", {
     flashvideoObject = document.getElementById (container.id);
     
     onLoading[container.id] = function (value){
-      console.log('on loading',value);
+      
       if(value==2) media.duration = flashvideoObject.sendToFlash('getEndTime','');
       else if(value==3&&media.waiting){
         media.waiting=false;
@@ -139,16 +139,16 @@ Popcorn.player( "flashvideo", {
         
         switch(value){
           case 1: // player loaded
-            console.log("onLoading - player loaded "+playerId);
+            //console.log("onLoading - player loaded "+playerId);
               break;
           case 2: // metadata loaded
-              console.log("onLoading - metadata loaded "+playerId);
+             // console.log("onLoading - metadata loaded "+playerId);
               break;
             case 3: // metadata loaded
-              console.log("onLoading - can play "+playerId);
+             // console.log("onLoading - can play "+playerId);
               break;
             default:
-              console.log("onLoading - " + value);
+              //console.log("onLoading - " + value);
         }
     };
 
@@ -195,7 +195,7 @@ Popcorn.player( "flashvideo", {
 
       src = /(http.*)/.exec( media.src )[ 1 ];
      
-      swfobject.embedSWF("assets/MediaPlayer.swf", container.id, "100%", "100%", "9.0.0", false, flashvars, params, attributes);
+      swfobject.embedSWF("MediaPlayer.swf", container.id, "100%", "100%", "9.0.0", false, flashvars, params, attributes);
     
     
      
