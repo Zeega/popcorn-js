@@ -6,18 +6,8 @@
     window.onYouTubePlayerReady[ containerId ] && window.onYouTubePlayerReady[ containerId ]();
   };
 
-  // existing youtube references can break us.
-  // remove it and use the one we can trust.
-  /*
-  if ( window.YT ) {
-    window.quarantineYT = window.YT;
-    window.YT = null;
-  }
-
-  onYouTubePlayerAPIReady.waiting = [];
-
-  var _loading = false;
-  */
+  window.stateChangeEventHandler = {};
+  window.onErrorEventHandler  = [];
 
   Popcorn.player( "youtube", {
     _canPlayType: function( nodeName, url ) {
@@ -45,8 +35,8 @@
 
      var guid = '';
     _.each(Popcorn.guid().toString().split(''), function(num){
-      guid += 'abcdefghijklmnopqrstuvwxyz'[num]
-    })
+      guid += 'abcdefghijklmnopqrstuvwxyz'[num];
+    });
     media.youtubeId = guid;//Math.floor( Math.random()*1000).toString(16);
   
     media.appendChild( container );
@@ -78,7 +68,7 @@
             media.duration = media.youtubeObject.getDuration();
             media.dispatchEvent( "canplaythrough" );
             media.dispatchEvent( "load" );
-            media.dispatchEvent( "durationchange" );   
+            media.dispatchEvent( "durationchange" );
             media.dispatchEvent( "loadeddata" );
           
           }
