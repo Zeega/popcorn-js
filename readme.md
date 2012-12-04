@@ -31,6 +31,9 @@ You can follow the project's bugs and activity [here](https://webmademovies.ligh
 
 Project workflow and developer guidelines are available [here](https://webmademovies.lighthouseapp.com/projects/63272/workflow).
 
+A note about MediaPlayer.swf
+-------------
+Popcorn complete assumes that MediaPlayer.swf exists at assets/vendor/popcorn/MediaPlayer.swf in your file structure.
 
 For Plugin Authors
 -------------
