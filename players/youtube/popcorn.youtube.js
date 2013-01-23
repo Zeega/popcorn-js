@@ -165,7 +165,9 @@
 
           media.dispatchEvent( "playing" );
           timeupdate();
-          media.youtubeObject.playVideo();
+          if ( media.youtubeObject.playVideo ) {
+            media.youtubeObject.playVideo();
+          }
         };
 
         media.pause = function()
